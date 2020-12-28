@@ -13,6 +13,10 @@
 		BEC6E294259A261A0060F043 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC6E292259A261A0060F043 /* Main.storyboard */; };
 		BEC6E296259A261B0060F043 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEC6E295259A261B0060F043 /* Assets.xcassets */; };
 		BEC6E299259A261B0060F043 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEC6E297259A261B0060F043 /* LaunchScreen.storyboard */; };
+		BEC6E2A7259A28230060F043 /* LIRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC6E2A6259A28230060F043 /* LIRefreshControl.swift */; };
+		BEC6E2AD259A283F0060F043 /* LIActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC6E2AC259A283F0060F043 /* LIActivityIndicatorView.swift */; };
+		BEC6E2B0259A284D0060F043 /* Indicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC6E2AF259A284D0060F043 /* Indicator.swift */; };
+		BEC6E2B4259A288A0060F043 /* CGRect+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC6E2B3259A288A0060F043 /* CGRect+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		BEC6E295259A261B0060F043 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEC6E298259A261B0060F043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEC6E29A259A261B0060F043 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEC6E2A6259A28230060F043 /* LIRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIRefreshControl.swift; sourceTree = "<group>"; };
+		BEC6E2AC259A283F0060F043 /* LIActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIActivityIndicatorView.swift; sourceTree = "<group>"; };
+		BEC6E2AF259A284D0060F043 /* Indicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Indicator.swift; sourceTree = "<group>"; };
+		BEC6E2B3259A288A0060F043 /* CGRect+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,8 @@
 		BEC6E28B259A261A0060F043 /* LoadingIndicator */ = {
 			isa = PBXGroup;
 			children = (
+				BEC6E2B2259A287A0060F043 /* Extension */,
+				BEC6E2A1259A27670060F043 /* Indicator */,
 				BEC6E28C259A261A0060F043 /* AppDelegate.swift */,
 				BEC6E28E259A261A0060F043 /* SceneDelegate.swift */,
 				BEC6E290259A261A0060F043 /* ViewController.swift */,
@@ -65,6 +75,24 @@
 				BEC6E29A259A261B0060F043 /* Info.plist */,
 			);
 			path = LoadingIndicator;
+			sourceTree = "<group>";
+		};
+		BEC6E2A1259A27670060F043 /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				BEC6E2A6259A28230060F043 /* LIRefreshControl.swift */,
+				BEC6E2AC259A283F0060F043 /* LIActivityIndicatorView.swift */,
+				BEC6E2AF259A284D0060F043 /* Indicator.swift */,
+			);
+			path = Indicator;
+			sourceTree = "<group>";
+		};
+		BEC6E2B2259A287A0060F043 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BEC6E2B3259A288A0060F043 /* CGRect+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +165,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEC6E2B4259A288A0060F043 /* CGRect+Extension.swift in Sources */,
 				BEC6E291259A261A0060F043 /* ViewController.swift in Sources */,
 				BEC6E28D259A261A0060F043 /* AppDelegate.swift in Sources */,
 				BEC6E28F259A261A0060F043 /* SceneDelegate.swift in Sources */,
+				BEC6E2A7259A28230060F043 /* LIRefreshControl.swift in Sources */,
+				BEC6E2AD259A283F0060F043 /* LIActivityIndicatorView.swift in Sources */,
+				BEC6E2B0259A284D0060F043 /* Indicator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
