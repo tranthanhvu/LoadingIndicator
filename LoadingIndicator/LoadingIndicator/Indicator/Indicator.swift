@@ -83,10 +83,13 @@ class Indicator: UIView {
     }
     
     func pull(to percent: CGFloat) {
-        let animation = UIViewPropertyAnimator(duration: Constant.duration, curve: .linear) {
-            self.icon.transform = .init(rotationAngle: percent * .pi * 2)
-        }
-        animation.startAnimation()
+        let rotateTransform = CGAffineTransform(rotationAngle: percent * .pi * 2)
+        self.icon.transform = rotateTransform
+        
+        let controlValue = min(1, percent)
+        let scaleTransform = CGAffineTransform(scaleX: controlValue, y: controlValue)
+        self.transform = scaleTransform
+        self.alpha = controlValue
     }
     
     func startAnim() {

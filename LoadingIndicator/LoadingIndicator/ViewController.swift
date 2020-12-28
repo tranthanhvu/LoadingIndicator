@@ -79,7 +79,8 @@ class ViewController: UITableViewController {
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.y)
+        let value = -(scrollView.contentOffset.y + scrollView.adjustedContentInset.top)
+        myRefreshControl.pull(to: value)
     }
 }
 

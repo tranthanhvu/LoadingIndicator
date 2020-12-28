@@ -8,12 +8,16 @@
 import UIKit
 
 class LIRefreshControl: UIRefreshControl {
+    
+    struct Constant {
+        static let height: CGFloat = 48.0
+    }
+    
     fileprivate var refreshContainerView: Indicator!
     
-    required override init(frame: CGRect = CGRect(x: 0, y: 0, width: 50, height: 50)) {
+    override init() {
         super.init()
         
-        bounds.size.width = frame.size.width
         setupRefreshControl()
     }
     
@@ -22,14 +26,29 @@ class LIRefreshControl: UIRefreshControl {
     }
     
     func setupRefreshControl() {
-        refreshContainerView = Indicator(frame: self.bounds)
+        refreshContainerView = Indicator(frame: CGRect(x: 0, y: 0, width: Constant.height, height: Constant.height))
         
         addSubview(self.refreshContainerView)
+        
+        refreshContainerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            refreshContainerView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            refreshContainerView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            refreshContainerView.widthAnchor.constraint(equalToConstant: Constant.height),
+            refreshContainerView.heightAnchor.constraint(equalToConstant: Constant.height)
+        ])
+    }
+    
+    func pull(to value: CGFloat) {
+        if self.isRefreshing == false {
+            let percent = value < 0 ? 0 : value / Constant.height
+            refreshContainerView.pull(to: percent)
+        }
     }
     
     override func beginRefreshing() {
         refreshContainerView.startAnim()
-        print("begin")
+        super.beginRefreshing()
     }
     
     override func endRefreshing() {
