@@ -103,6 +103,14 @@ class ViewController: UITableViewController {
         }
     }
     
+    private func showFullScreenLoading() {
+        LILoadingViewController.shared.show(in: self)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            LILoadingViewController.shared.hide()
+        }
+    }
+    
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let value = -(scrollView.contentOffset.y + scrollView.adjustedContentInset.top)
         myRefreshControl.pull(to: value)
@@ -117,7 +125,11 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        showCenterIndicator()
+        if indexPath.row == 0 {
+            showFullScreenLoading()
+        } else {
+            showCenterIndicator()
+        }
     }
 }
 

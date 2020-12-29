@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BEB1E232259B84A9002A47EA /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1E231259B84A9002A47EA /* UIScrollView+Extension.swift */; };
+		BEB1E235259B8615002A47EA /* LILoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1E234259B8615002A47EA /* LILoadingViewController.swift */; };
 		BEC6E28D259A261A0060F043 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC6E28C259A261A0060F043 /* AppDelegate.swift */; };
 		BEC6E28F259A261A0060F043 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC6E28E259A261A0060F043 /* SceneDelegate.swift */; };
 		BEC6E291259A261A0060F043 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC6E290259A261A0060F043 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		BEB1E231259B84A9002A47EA /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		BEB1E234259B8615002A47EA /* LILoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LILoadingViewController.swift; sourceTree = "<group>"; };
 		BEC6E289259A261A0060F043 /* LoadingIndicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoadingIndicator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC6E28C259A261A0060F043 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEC6E28E259A261A0060F043 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				BEC6E2A6259A28230060F043 /* LIRefreshControl.swift */,
 				BEC6E2AC259A283F0060F043 /* LIActivityIndicatorView.swift */,
 				BEC6E2AF259A284D0060F043 /* Indicator.swift */,
+				BEB1E234259B8615002A47EA /* LILoadingViewController.swift */,
 			);
 			path = Indicator;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEB1E235259B8615002A47EA /* LILoadingViewController.swift in Sources */,
 				BEC6E2B4259A288A0060F043 /* CGRect+Extension.swift in Sources */,
 				BEC6E291259A261A0060F043 /* ViewController.swift in Sources */,
 				BEC6E28D259A261A0060F043 /* AppDelegate.swift in Sources */,
