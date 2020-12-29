@@ -77,12 +77,14 @@ class Indicator: UIView {
         self.layer.masksToBounds = false
         self.layer.cornerRadius = r
         self.layer.shadowOpacity = 1
-        self.layer.shadowColor = UIColor.black.withAlphaComponent(0.3).cgColor
+        self.layer.shadowColor = UIColor.black.withAlphaComponent(29.0 / 255.0).cgColor
         self.layer.shadowOffset = CGSize(width: 0, height: 3.0)
         self.layer.shadowRadius = 6
     }
     
     func pull(to percent: CGFloat) {
+        self.isHidden = false
+        
         let rotateTransform = CGAffineTransform(rotationAngle: percent * .pi * 2)
         self.icon.transform = rotateTransform
         
@@ -93,6 +95,8 @@ class Indicator: UIView {
     }
     
     func startAnim() {
+        self.isHidden = false
+        
         let animation = CABasicAnimation(keyPath: "transform.rotation.z")
         animation.fromValue = 0
         animation.toValue = Double.pi * 2
@@ -101,7 +105,7 @@ class Indicator: UIView {
         icon.layer.add(animation, forKey: "rotationAnimation")
     }
     
-    func endAnim() {
+    func stopAnim() {
         let scaleAnim = CABasicAnimation(keyPath: "transform.scale")
         scaleAnim.fromValue = 1
         scaleAnim.toValue = 0
@@ -124,6 +128,6 @@ class Indicator: UIView {
 extension Indicator: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         icon.layer.removeAllAnimations()
+        self.isHidden = true
     }
 }
-

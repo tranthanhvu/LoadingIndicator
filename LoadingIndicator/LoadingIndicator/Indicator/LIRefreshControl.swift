@@ -10,13 +10,19 @@ import UIKit
 class LIRefreshControl: UIRefreshControl {
     
     struct Constant {
-        static let height: CGFloat = 48.0
+        static let height: CGFloat = 44.0
     }
     
     fileprivate var refreshContainerView: Indicator!
+    fileprivate var canPullToRefresh: Bool = true
+    fileprivate var isPulling: Bool = true
     
     override init() {
         super.init()
+        
+        // to make the default indicator be visible
+        self.tintColor = .clear
+        self.subviews.first?.alpha = 0
         
         setupRefreshControl()
     }
@@ -40,19 +46,29 @@ class LIRefreshControl: UIRefreshControl {
     }
     
     func pull(to value: CGFloat) {
-        if self.isRefreshing == false {
+        if value == 0 && canPullToRefresh {
+            isPulling = true
+        }
+        
+        if self.isRefreshing == false && isPulling {
             let percent = value < 0 ? 0 : value / Constant.height
             refreshContainerView.pull(to: percent)
         }
     }
     
+    func releasePull() {
+        canPullToRefresh = true
+    }
+    
     override func beginRefreshing() {
         refreshContainerView.startAnim()
         super.beginRefreshing()
+        isPulling = false
+        canPullToRefresh = false
     }
     
     override func endRefreshing() {
-        refreshContainerView.endAnim()
+        refreshContainerView.stopAnim()
         super.endRefreshing()
     }
 }
