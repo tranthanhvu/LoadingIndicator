@@ -91,9 +91,25 @@ class ViewController: UITableViewController {
         }
     }
     
+    private func showLoadMore() {
+        if bottomActivityIndicator.isAnimating == false {
+            tableView.tableFooterView = footer
+            bottomActivityIndicator.startAnimating()
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.tableView.tableFooterView = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 1, height: 1)))
+                self.bottomActivityIndicator.stopAnimating()
+            }
+        }
+    }
+    
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let value = -(scrollView.contentOffset.y + scrollView.adjustedContentInset.top)
         myRefreshControl.pull(to: value)
+        
+        if scrollView.isNearBottomEdge() {
+            showLoadMore()
+        }
     }
     
     override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {

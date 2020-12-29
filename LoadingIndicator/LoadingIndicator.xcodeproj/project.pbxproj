@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BEB1E232259B84A9002A47EA /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1E231259B84A9002A47EA /* UIScrollView+Extension.swift */; };
 		BEC6E28D259A261A0060F043 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC6E28C259A261A0060F043 /* AppDelegate.swift */; };
 		BEC6E28F259A261A0060F043 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC6E28E259A261A0060F043 /* SceneDelegate.swift */; };
 		BEC6E291259A261A0060F043 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC6E290259A261A0060F043 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BEB1E231259B84A9002A47EA /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		BEC6E289259A261A0060F043 /* LoadingIndicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoadingIndicator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC6E28C259A261A0060F043 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEC6E28E259A261A0060F043 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				BEC6E2B3259A288A0060F043 /* CGRect+Extension.swift */,
+				BEB1E231259B84A9002A47EA /* UIScrollView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				BEC6E2A7259A28230060F043 /* LIRefreshControl.swift in Sources */,
 				BEC6E2AD259A283F0060F043 /* LIActivityIndicatorView.swift in Sources */,
 				BEC6E2B0259A284D0060F043 /* Indicator.swift in Sources */,
+				BEB1E232259B84A9002A47EA /* UIScrollView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
