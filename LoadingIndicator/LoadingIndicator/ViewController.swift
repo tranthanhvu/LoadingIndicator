@@ -44,7 +44,6 @@ class ViewController: UITableViewController {
     
     lazy var bottomActivityIndicator: LIActivityIndicatorView = {
         let control = LIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: Constant.small, height: Constant.small))
-//        control.color = Asset.textSecondary.color
         
         NSLayoutConstraint.activate([
             control.heightAnchor.constraint(equalToConstant: control.bounds.height),
@@ -54,6 +53,7 @@ class ViewController: UITableViewController {
         return control
     }()
     
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -82,7 +82,10 @@ class ViewController: UITableViewController {
             self.myRefreshControl.endRefreshing()
         }
     }
-    
+}
+
+// MARK: - Show Loading View
+extension ViewController {
     private func showCenterIndicator() {
         centerActivityIndicator.startAnimating()
         
@@ -110,7 +113,10 @@ class ViewController: UITableViewController {
             LILoadingViewController.shared.hide()
         }
     }
-    
+}
+
+// MARK: - UITableViewDelegate
+extension ViewController {
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let value = -(scrollView.contentOffset.y + scrollView.adjustedContentInset.top)
         myRefreshControl.pull(to: value)
@@ -132,4 +138,3 @@ class ViewController: UITableViewController {
         }
     }
 }
-
