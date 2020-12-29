@@ -9,6 +9,11 @@ import UIKit
 
 class ViewController: UITableViewController {
 
+    struct Constant {
+        static let medium = 60
+        static let small = 30
+    }
+    
     // MARK: - UI
     lazy var myRefreshControl: LIRefreshControl = {
         let control = LIRefreshControl()
@@ -17,7 +22,7 @@ class ViewController: UITableViewController {
     }()
     
     lazy var centerActivityIndicator: LIActivityIndicatorView = {
-        let control = LIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let control = LIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: Constant.medium, height: Constant.medium))
         return control
     }()
     
@@ -37,13 +42,13 @@ class ViewController: UITableViewController {
         return view
     }()
     
-    lazy var bottomActivityIndicator: UIActivityIndicatorView = {
-        let control = UIActivityIndicatorView(style: .gray)
+    lazy var bottomActivityIndicator: LIActivityIndicatorView = {
+        let control = LIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: Constant.small, height: Constant.small))
 //        control.color = Asset.textSecondary.color
         
         NSLayoutConstraint.activate([
-            control.heightAnchor.constraint(equalToConstant: 50),
-            control.widthAnchor.constraint(equalToConstant: 50)
+            control.heightAnchor.constraint(equalToConstant: control.bounds.height),
+            control.widthAnchor.constraint(equalToConstant: control.bounds.width)
         ])
         
         return control
@@ -78,9 +83,25 @@ class ViewController: UITableViewController {
         }
     }
     
+    private func showCenterIndicator() {
+        centerActivityIndicator.startAnimating()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.centerActivityIndicator.stopAnimating()
+        }
+    }
+    
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let value = -(scrollView.contentOffset.y + scrollView.adjustedContentInset.top)
         myRefreshControl.pull(to: value)
+    }
+    
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        myRefreshControl.releasePull()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showCenterIndicator()
     }
 }
 
