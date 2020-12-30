@@ -3,6 +3,4 @@ This project is an example of how to custom the UIRefreshControl and the UIActiv
 
 ## illustrator
 
-![pull-to-request](./Images/PullToRefresh.gif)
-
-![Loading](./Images/Loading.gif)
+![pull-to-request](./Images/PullToRefresh.gif)![Loading](./Images/Loading.gif)
