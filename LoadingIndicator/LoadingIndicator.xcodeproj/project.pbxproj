@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE236F2825A370630079A442 /* UIApplication+statusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE236F2725A370630079A442 /* UIApplication+statusBar.swift */; };
 		BEB1E232259B84A9002A47EA /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1E231259B84A9002A47EA /* UIScrollView+Extension.swift */; };
 		BEB1E235259B8615002A47EA /* LILoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB1E234259B8615002A47EA /* LILoadingViewController.swift */; };
 		BEC6E28D259A261A0060F043 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC6E28C259A261A0060F043 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE236F2725A370630079A442 /* UIApplication+statusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+statusBar.swift"; sourceTree = "<group>"; };
 		BEB1E231259B84A9002A47EA /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		BEB1E234259B8615002A47EA /* LILoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LILoadingViewController.swift; sourceTree = "<group>"; };
 		BEC6E289259A261A0060F043 /* LoadingIndicator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoadingIndicator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,7 @@
 		BEC6E2B2259A287A0060F043 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BE236F2725A370630079A442 /* UIApplication+statusBar.swift */,
 				BEC6E2B3259A288A0060F043 /* CGRect+Extension.swift */,
 				BEB1E231259B84A9002A47EA /* UIScrollView+Extension.swift */,
 			);
@@ -171,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE236F2825A370630079A442 /* UIApplication+statusBar.swift in Sources */,
 				BEB1E235259B8615002A47EA /* LILoadingViewController.swift in Sources */,
 				BEC6E2B4259A288A0060F043 /* CGRect+Extension.swift in Sources */,
 				BEC6E291259A261A0060F043 /* ViewController.swift in Sources */,

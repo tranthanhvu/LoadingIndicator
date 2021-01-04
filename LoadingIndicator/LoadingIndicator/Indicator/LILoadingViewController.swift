@@ -50,10 +50,19 @@ class LILoadingViewController: UIViewController {
     }
     
     // MARK: - funcs
-    func show(in viewController: UIViewController) {
-        self.modalTransitionStyle = .crossDissolve
-        self.modalPresentationStyle = .overFullScreen
-        viewController.present(self, animated: true, completion: nil)
+    // MARK: - funcs
+    func show() {
+        if let window = UIWindow.key {
+            window.addSubview(self.view)
+            
+            self.view.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                window.topAnchor.constraint(equalTo: self.view.topAnchor),
+                window.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+                window.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+                window.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+            ])
+        }
     }
     
     func hide() {

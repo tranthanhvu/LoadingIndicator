@@ -107,7 +107,7 @@ extension ViewController {
     }
     
     private func showFullScreenLoading() {
-        LILoadingViewController.shared.show(in: self)
+        LILoadingViewController.shared.show()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             LILoadingViewController.shared.hide()
